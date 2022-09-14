@@ -1,19 +1,26 @@
 <template>
   <div class="footer">
     <div class="footer-left-container">
-      <button class="transition ease-in-out delay-100 footer-button-trash hover:bg-red-500 hover:border-red-500">
-        <IconBase>
-          <IconTrashAlt class="transition ease-in-out delay-100 group-hover:text-blue-500" />
-        </IconBase>
-      </button>
+      <ButtonSecondaryDestructive/>
+      <ButtonSecondaryOutlined label="desativar">
+        <IconPowerOnOff/>
+      </ButtonSecondaryOutlined>
 
-      <button class="footer-button-power group">
-        <IconBase >
-          <IconPowerOnOff class="transition ease-in-out delay-100 group-hover:text-blue-500"/>
+      <ButtonBase color="primary">
+        <template v-slot:icon><IconTrashAlt/></template>
+      </ButtonBase>
 
-        </IconBase>
-        <p class="transition ease-in-out delay-100 group-hover:text-blue-500">Desativar</p>
-      </button>
+      <ButtonIcon>
+        <IconTrashAlt/>
+      </ButtonIcon>
+
+      <ButtonIconLabel>
+        <template v-slot:icon>
+          <IconTrashAlt/>
+        </template>
+        teste
+      </ButtonIconLabel>
+
     </div>
 
 
@@ -25,13 +32,21 @@
 
 <script>
 import '../styles/footer.sass'
-import IconBase from "./Icons/IconBase.vue";
-import IconTrashAlt from "./Icons/Icons/IconTrashAlt.vue";
+
+
+import ButtonSecondaryDestructive from "./Buttons/ButtonSecondaryDestructive.vue";
+import ButtonSecondaryOutlined from "./Buttons/ButtonSecondaryOutlined.vue";
 import IconPowerOnOff from "./Icons/Icons/IconPowerOnOff.vue";
+import ButtonBase from "./Buttons/ButtonBase.vue";
+import IconTrashAlt from "./Icons/Icons/IconTrashAlt.vue";
+import ButtonIcon from "./Buttons/ButtonIcon.vue";
+import ButtonIconLabel from "./Buttons/ButtonIconLabel.vue";
 
 export default {
   name: "Footer",
-  components: {IconPowerOnOff, IconTrashAlt, IconBase}
+  components: {
+    ButtonIconLabel,
+    ButtonIcon, IconTrashAlt, ButtonBase, IconPowerOnOff, ButtonSecondaryOutlined, ButtonSecondaryDestructive}
 }
 </script>
 
