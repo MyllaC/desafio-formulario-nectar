@@ -1,12 +1,12 @@
 <template>
   <div class="input">
-    <label class="form-label" :for="`${inputName}`">
+    <label class="input-label" :for="`${inputName}`">
       <span><slot name="label"></slot></span>
-      <span v-if="isRequired"><sup>*</sup></span>
+      <span v-if="isRequired" ><sup>*</sup></span>
     </label>
 
-    <input class="form-input" :id="`${inputName}`" :type="`${inputType}`"
-           :placeholder="`${placeHolder}`" required>
+    <input class="input-container" :id="`${inputName}`" :type="`${inputType}`"
+           :placeholder="`${placeHolder}`" required v-model="message">
 
   </div>
 </template>
@@ -16,13 +16,19 @@ import './styles.sass'
 
 export default {
   name: "InputBase",
+  data(){
+    return{
+      message: ''
+    }
+  },
   props: {
     isRequired: false,
+
     inputName: {
       type: String
     },
     placeHolder: {
-      tytpe: String
+      type: String
     },
     inputType: {
       type: String,

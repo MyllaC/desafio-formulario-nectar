@@ -2,9 +2,11 @@
   <form class="form">
 
     <InputBase :isRequired="true" inputName="userName" inputType="text"
-               placeHolder="Seu nome" required>
+               placeHolder="Seu nome" required message="teste">
       <template v-slot:label>Nome</template>
     </InputBase>
+
+    <p>{{message}}</p>
 
     <InputBase :isRequired="true" inputName="userEmail" inputType="email"
                placeHolder="E-mail" required>
@@ -13,7 +15,7 @@
 
     <div class="flex items-center space-x-4">
       <InputBase :isRequired="true" inputName="userPassword" inputType="password"
-                 placeHolder="Sua senha" required>
+                 placeHolder="Sua senha" >
         <template v-slot:label>Senha</template>
 
       </InputBase>
@@ -35,7 +37,7 @@
 
 
     <InputBase :isRequired="false" inputName="userCellphone" inputType="tel"
-               placeHolder="(xx)xxxx-xxxx" required>
+               placeHolder="(xx)xxxx-xxxx" >
       <template v-slot:label>Celular</template>
     </InputBase>
 
@@ -68,6 +70,7 @@ import '../../styles/form.sass'
 export default {
   name: "Form",
   components: {toggle},
+
 }
 </script>
 
