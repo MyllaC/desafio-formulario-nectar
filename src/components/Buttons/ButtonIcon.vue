@@ -1,5 +1,5 @@
 <template>
-  <ButtonBase :color="color" :has-icon="true">
+  <ButtonBase :color="color" :has-icon="true" :has-label="false">
     <template v-slot:icon>
       <slot></slot>
     </template>

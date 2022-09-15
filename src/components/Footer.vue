@@ -1,32 +1,26 @@
 <template>
   <div class="footer">
     <div class="footer-left-container">
-      <ButtonSecondaryDestructive/>
-      <ButtonSecondaryOutlined label="desativar">
-        <IconPowerOnOff/>
-      </ButtonSecondaryOutlined>
 
-      <ButtonBase color="primary">
+      <ButtonBase color="danger" :has-icon="true" :has-label="false">
         <template v-slot:icon><IconTrashAlt/></template>
       </ButtonBase>
 
-      <ButtonIcon>
-        <IconTrashAlt/>
-      </ButtonIcon>
-
-      <ButtonIconLabel>
+      <ButtonIconLabel color="secondary" :has-icon="true" :has-label="true">
         <template v-slot:icon>
-          <IconTrashAlt/>
+          <IconPowerOnOff/>
         </template>
-        teste
+        Desativar
       </ButtonIconLabel>
+
+
 
     </div>
 
 
-    <button class="footer-button-save">
+    <ButtonIconLabel color="primary" :has-icon="false" :has-label="true">
       Salvar
-    </button>
+    </ButtonIconLabel>
   </div>
 </template>
 
@@ -34,8 +28,6 @@
 import '../styles/footer.sass'
 
 
-import ButtonSecondaryDestructive from "./Buttons/ButtonSecondaryDestructive.vue";
-import ButtonSecondaryOutlined from "./Buttons/ButtonSecondaryOutlined.vue";
 import IconPowerOnOff from "./Icons/Icons/IconPowerOnOff.vue";
 import ButtonBase from "./Buttons/ButtonBase.vue";
 import IconTrashAlt from "./Icons/Icons/IconTrashAlt.vue";
@@ -46,7 +38,7 @@ export default {
   name: "Footer",
   components: {
     ButtonIconLabel,
-    ButtonIcon, IconTrashAlt, ButtonBase, IconPowerOnOff, ButtonSecondaryOutlined, ButtonSecondaryDestructive}
+    ButtonIcon, IconTrashAlt, ButtonBase, IconPowerOnOff}
 }
 </script>
 

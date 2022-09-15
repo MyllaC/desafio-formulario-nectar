@@ -1,21 +1,37 @@
 .nectar-button
-  @apply flex flex-row items-center
+  @apply flex flex-row items-center p-0 text-[13px] rounded font-semibold
 
 .nectar-button__primary
-  @apply bg-blue-500 border border-transparent focus:border-blue-600 hover:bg-blue-600 hover:border-transparent
-
+  @apply bg-blue-500 border border-transparent text-grayscale-white focus:border-blue-600 hover:bg-blue-600 hover:border-transparent
   &__icon
     @apply fill-grayscale-white
 
 .nectar-button__secondary
   @apply bg-grayscale-white border border-grayscale-10 text-grayblue-80 focus:border-blue-200 focus:text-blue-500 hover:text-blue-500 hover:border-grayblue-5
-
   &__icon
     @apply fill-grayscale-50 group-hover:fill-blue-500 group-focus:fill-blue-500
 
 .nectar-button__danger
-  @apply fill-red-400
+  @apply bg-grayscale-white border border-grayscale-10 text-grayblue-80 focus:border-red-100 hover:text-grayscale-white hover:border-transparent hover:bg-red-400 hover:shadow
+  &__icon
+    @apply fill-red-400 group-hover:fill-grayscale-white
 
 .nectar-button__primary-outline
-  @apply fill-red-400
+  @apply bg-grayscale-white border border-grayscale-10 text-blue-500 focus:border-blue-200 hover:bg-blue-500 hover:border-transparent hover:text-grayscale-white
+  &__icon
+    @apply fill-blue-500 group-hover:fill-grayscale-white
 
+
+.nectar-button__has-icon
+  @apply m-[11px]
+
+.nectar-button__has-label
+  @apply p-0 m-0 h-0 w-0
+
+.nectar-button__-label-padding
+  @apply mx-[14px] my-[9px]
+
+.nectar-button__has-label-and-icon
+  @apply ml-[10.33px] mr-[7px] my-[11.33px]
+.nectar-button__-label-and-icon--padding
+  @apply ml-[0px] mr-[14px] my-[8.5px]

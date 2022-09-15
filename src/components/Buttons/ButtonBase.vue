@@ -1,10 +1,10 @@
 <template>
 <button :class="`nectar-button nectar-button__${color} ${classes} group`">
-  <IconBase :class="`nectar-button__${color}__icon`">
+  <IconBase :class="`nectar-button__${color}__icon ${iconPadding}`">
     <slot name="icon"></slot>
   </IconBase>
 
-  <span><slot name="label"></slot></span>
+  <span :class="`${textPadding}`"><slot name="label"></slot></span>
 </button>
 </template>
 
@@ -16,6 +16,7 @@ export default {
   components: {IconBase},
   props: {
     hasIcon: false,
+    hasLabel: false,
     color: {
       type: String,
       default: 'secondary',
@@ -26,14 +27,22 @@ export default {
   },
   data() {
     return {
-      classes: ''
+      classes: '',
+      iconPadding: '',
+      textPadding: '',
     }
   },
   beforeMount() {
     // this.$slots
-    if (this.hasIcon) {
-      this.classes += ' nectar-button__has-icon '
-    }
+    if (this.hasIcon && !this.hasLabel) {
+      this.iconPadding += ' nectar-button__has-icon '
+    } else if (!this.hasIcon && this.hasLabel) {
+        this.iconPadding += ' nectar-button__has-label '
+        this.textPadding += ' nectar-button__-label-padding '
+      } else if (this.hasIcon && this.hasIcon) {
+        this.iconPadding += ' nectar-button__has-label-and-icon '
+        this.textPadding += ' nectar-button__-label-and-icon--padding'
+      }
   },
 }
 </script>
