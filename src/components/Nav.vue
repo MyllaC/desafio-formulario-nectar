@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import '../../styles/nav.sass'
+import '../styles/nav.sass'
 export default {
   name: "Nav"
 }

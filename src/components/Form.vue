@@ -16,7 +16,6 @@
       <InputBase :isRequired="true" inputName="userPassword" inputType="password"
                  placeHolder="Sua senha" v-model="modelValue.password">
         <template v-slot:label>Senha</template>
-
       </InputBase>
       <ButtonIconLabel color="secondary" :has-icon="true" :has-label="true">
         <template v-slot:icon>
@@ -25,6 +24,8 @@
         Alterar
       </ButtonIconLabel>
     </div>
+
+    <InputPassword v-model="modelValue.password"/>
 
 
 
@@ -42,7 +43,7 @@
 
     <div class="flex flex-row items-start justify-between pb-6">
       <label class="form-label-dif" for="absent">Ausente</label>
-      <toggle v-model="toggleState" />
+      <Toggle v-model="toggleState" />
     </div>
 
     <div class="form-container">
@@ -63,12 +64,12 @@
 </template>
 
 <script>
-import '../../styles/form.sass'
+import '../styles/form.sass'
 
 
 export default {
   name: "Form",
-  components: {toggle},
+  components: {Toggle},
   props: {
     modelValue: Object,
   },
@@ -87,11 +88,11 @@ export default {
 
 <script setup>
 import {ref} from "vue";
-import toggle from "./toggle.vue";
-
-import IconEditPencil from "../Icons/Icons/IconEditPencil.vue";
-import ButtonIconLabel from "../Buttons/ButtonIconLabel.vue";
-import InputBase from "../Inputs/InputBase.vue";
+import Toggle from "./Toggle.vue";
+import IconEditPencil from "./Icons/Icons/IconEditPencil.vue";
+import ButtonIconLabel from "./Buttons/ButtonIconLabel.vue";
+import InputBase from "./Inputs/InputBase.vue";
+import InputPassword from "./Inputs/InputPassword.vue";
 const toggleState = ref(false)
 </script>
 

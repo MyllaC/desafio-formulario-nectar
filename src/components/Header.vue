@@ -5,7 +5,7 @@
     </IconBase>
     <span  class="header-options">
       <p class="header-options-user">Edição de usuário</p>
-      <p class="header-options-userName">Eduardo M</p>
+      <p class="header-options-userName">{{ user.username }}</p>
     </span>
 
     <p class="header-iconx">X</p>
@@ -23,6 +23,9 @@ export default {
     IconAvatarAlt,
     IconBase
 
+  },
+  props: {
+    user: Object
   }
 }
 </script>
