@@ -6,7 +6,10 @@
     </label>
 
     <input class="input-container" :id="`${inputName}`" :type="`${inputType}`"
-           :placeholder="`${placeHolder}`" required v-model="message">
+           :placeholder="`${placeHolder}`" required
+           :value="modelValue"
+           v-on:input="onInput">
+
 
   </div>
 </template>
@@ -16,14 +19,9 @@ import './styles.sass'
 
 export default {
   name: "InputBase",
-  data(){
-    return{
-      message: ''
-    }
-  },
   props: {
+    modelValue: '',
     isRequired: false,
-
     inputName: {
       type: String
     },
@@ -38,6 +36,16 @@ export default {
       }
     }
   },
+  data() {
+    return {
+    }
+  },
+  methods: {
+    onInput(event) {
+      this.$emit("update:modelValue", event.target.value)
+      this.$emit("update");
+    }
+  }
 
 }
 </script>

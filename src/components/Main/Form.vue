@@ -2,20 +2,19 @@
   <form class="form">
 
     <InputBase :isRequired="true" inputName="userName" inputType="text"
-               placeHolder="Seu nome" required message="teste">
+               placeHolder="Seu nome" required v-model="modelValue.username"
+                @update="userUpdated()">
       <template v-slot:label>Nome</template>
     </InputBase>
 
-    <p>{{message}}</p>
-
     <InputBase :isRequired="true" inputName="userEmail" inputType="email"
-               placeHolder="E-mail" required>
+               placeHolder="E-mail" required v-model="modelValue.email">
       <template v-slot:label>E-mail/Login</template>
     </InputBase>
 
     <div class="flex items-center space-x-4">
       <InputBase :isRequired="true" inputName="userPassword" inputType="password"
-                 placeHolder="Sua senha" >
+                 placeHolder="Sua senha" v-model="modelValue.password">
         <template v-slot:label>Senha</template>
 
       </InputBase>
@@ -70,7 +69,19 @@ import '../../styles/form.sass'
 export default {
   name: "Form",
   components: {toggle},
-
+  props: {
+    modelValue: Object,
+  },
+  data() {
+    return {
+      username: '',
+    }
+  },
+  methods: {
+    userUpdated() {
+      // alert('funcionou')
+    }
+  }
 }
 </script>
 

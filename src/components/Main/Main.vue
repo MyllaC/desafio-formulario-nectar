@@ -2,7 +2,7 @@
   <body class="Main">
   <Nav/>
   <div class="flex space-x-2 py-5 space-x-10 ">
-    <Form/>
+    <Form v-model="user"/>
     <Photo/>
   </div>
 
@@ -17,6 +17,15 @@ import Photo from "./Photo.vue";
 
 export default {
   name: "Main",
-  components: {Photo, Form, Nav}
+  components: {Photo, Form, Nav},
+  data() {
+    return {
+      user: {
+        username: 'Camila',
+        email: 'email',
+        password: 'senha',
+      }
+    }
+  }
 }
 </script>

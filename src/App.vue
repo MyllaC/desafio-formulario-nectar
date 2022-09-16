@@ -16,7 +16,14 @@ import Main from "./components/Main/Main.vue";
 import Footer from "./components/Footer.vue";
 
 export default {
-  components: {Footer, Main, Header}
+  components: {Footer, Main, Header},
+  data() {
+    return {
+      user: {
+        username: '',
+      }
+    }
+  }
 }
 
 
