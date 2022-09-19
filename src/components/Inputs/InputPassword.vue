@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div >
     <div class="flex items-center space-x-4">
       <div class="input">
         <label class="input-label" :for="`${inputName}`">
