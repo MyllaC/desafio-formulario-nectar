@@ -8,7 +8,7 @@
          :height="localHeight"
          :fill="color"
          :class="styles"
-         @click="emitClick()">
+         >
         <slot/>
     </svg>
 </template>
@@ -62,11 +62,15 @@ export default {
         this.localHeight = this.height ? this.height : this.size ? this.size : 18;
         this.localWidth = this.width ? this.width : this.size ? this.size : 18;
     },
+  /*
     methods: {
         emitClick() {
             this.$emit('click')
         }
     },
+
+
+   */
 }
 
 </script>

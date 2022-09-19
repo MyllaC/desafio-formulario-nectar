@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full border flex flex-col items-center space-y-4 truncate">
+  <div class="w-full flex flex-col items-center space-y-4 truncate">
     <img class="userPhoto"
         src="https://images.unsplash.com/photo-1589526261866-ab0d34f8dc19?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=689&q=80">
     <div class="flex space-x-4">

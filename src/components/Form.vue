@@ -12,26 +12,17 @@
       <template v-slot:label>E-mail/Login</template>
     </InputBase>
 
-    <div class="flex items-center space-x-4">
-      <InputBase :isRequired="true" inputName="userPassword" inputType="password"
-                 placeHolder="Sua senha" v-model="modelValue.password">
-        <template v-slot:label>Senha</template>
-      </InputBase>
-      <ButtonIconLabel color="secondary" :has-icon="true" :has-label="true">
-        <template v-slot:icon>
-          <IconEditPencil/>
-        </template>
-        Alterar
-      </ButtonIconLabel>
-    </div>
 
-    <InputPassword v-model="modelValue.password"/>
-
+    <InputPassword :isRequired="true" inputName="userPassword" inputType="password"
+                   placeHolder="Sua senha"
+                   v-model="modelValue.password">
+      <template v-slot:label>Senha</template>
+    </InputPassword>
 
 
     <label class="form-label" for="role">Cargo</label>
     <select class="form-input" id="role">
-      <option value="Buscar por um cargo...">Buscar por um cargo...</option>
+      <option disabled value="">Buscar por um cargo...</option>
       <option value="vendedor">Vendedor</option>
     </select>
 
@@ -43,7 +34,7 @@
 
     <div class="flex flex-row items-start justify-between pb-6">
       <label class="form-label-dif" for="absent">Ausente</label>
-      <Toggle v-model="toggleState" />
+      <toggle v-model="toggleState"/>
     </div>
 
     <div class="form-container">
@@ -65,11 +56,9 @@
 
 <script>
 import '../styles/form.sass'
-
-
 export default {
   name: "Form",
-  components: {Toggle},
+
   props: {
     modelValue: Object,
   },
@@ -88,11 +77,13 @@ export default {
 
 <script setup>
 import {ref} from "vue";
-import Toggle from "./Toggle.vue";
+
 import IconEditPencil from "./Icons/Icons/IconEditPencil.vue";
 import ButtonIconLabel from "./Buttons/ButtonIconLabel.vue";
 import InputBase from "./Inputs/InputBase.vue";
 import InputPassword from "./Inputs/InputPassword.vue";
+import Toggle from "./Toggle.vue";
+
 const toggleState = ref(false)
 </script>
 
